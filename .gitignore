@@ -1,0 +1,20 @@
+# Build artifacts
+/build/
+
+# Local notes / private files
+/CheatSheet.txt
+/Template.txt
+
+# Presentation
+/docs/Presentation.odp
+
+# Compiled objects and dependencies
+*.o
+*.d
+
+# Executables
+*.exe
+
+# Logs
+*.log
+

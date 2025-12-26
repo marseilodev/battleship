@@ -1,0 +1,61 @@
+name: C++ Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build & Verify
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Environment info
+        run: |
+          echo "Compiler version:"
+          g++ --version
+          echo "Make version:"
+          make --version
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: Clean build directory
+        run: |
+          if [ -f Makefile ]; then
+            make clean || true
+          fi
+
+      - name: Build project
+        run: |
+          make CXXFLAGS+=" -Werror"
+
+      - name: Verify build artifacts
+        run: |
+          if [ ! -d build ]; then
+            echo "ERROR: build directory not found"
+            exit 1
+          fi
+
+      - name: Run tests
+        if: ${{ hashFiles('**/*test*') != '' }}
+        run: |
+          if make -n test >/dev/null 2>&1; then
+            make test
+          else
+            echo "No test target defined, skipping tests."
+          fi
