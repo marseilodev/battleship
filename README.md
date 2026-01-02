@@ -13,7 +13,7 @@
 </h4>
 
 <p align="center">
-  <a href="LICENSE.md">
+  <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="License">
   </a>
   <a href="https://github.com/marseilodev/battleship/actions/workflows/ci.yml">
@@ -84,7 +84,7 @@ This project uses CMake with CMake Presets to ensure a clean, reproducible, and 
 
 ## Installation
 
-See the detailed [Installation & Build Guide](docs/INSTALL.md) for instructions on:
+See the detailed [Installation & Build Guide](docs/INSTALLATION.md) for instructions on:
 
 - Installing prerequisites  
 - Cloning the repository  
@@ -93,10 +93,10 @@ See the detailed [Installation & Build Guide](docs/INSTALL.md) for instructions 
 - Installing the game system-wide
 
 > [!WARNING]
-> Manual compilation of each source file is possible but not recommended, see [`INSTALLATION`](docs/INSTALL.md).
+> Manual compilation of each source file is possible but not recommended, see [`INSTALLATION`](docs/INSTALLATION.md).
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. For full details, see the [LICENSE](LICENSE.md) file.
+This project is licensed under the MIT License. For full details, see the [LICENSE](LICENSE) file.

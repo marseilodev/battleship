@@ -49,17 +49,17 @@ config:
 ---
 flowchart LR
 
-  Main["main()\n(Application Entry Point)"]
-  GameCore["GameCore\n(Core Orchestrator)"]
-  BattleField["BattleField\n(Core Field Logic)"]
+  Main["main()"]
+  GameCore["GameCore"]
+  BattleField["BattleField"]
 
-  subgraph Modes["Game Modes"]
+  subgraph Modes["`**Game Modes**`"]
     Tutorial["TutorialField"]
     Intermediate["IntermediateField"]
     Advanced["AdvancedField"]
   end
 
-  Utils["GameUtils\n(Shared Utilities)"]
+  Utils["GameUtils"]
 
   %% Relationships
   Main --> GameCore
